@@ -1,217 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gull School — Amazon FBA Mastery</title>
+    <title>Gull Empire — Enterprise Academy</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" href="https://abdullah-gull.github.io/services/facon-Gull-of-Group.png">
+    <!-- Firebase Standard SDKs (Guaranteed Loading) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#000000',
+                            dark: '#0a0a0a',
+                            card: '#121212',
+                            border: '#262626',
+                            silver: '#e5e5e5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-[#0a0512] text-white font-sans antialiased selection:bg-purple-600 selection:text-white">
+<body class="bg-black text-white font-sans antialiased selection:bg-white selection:text-black min-h-screen flex flex-col justify-between">
 
-    <!-- STICKY NAVBAR -->
-    <header class="sticky top-0 z-50 bg-[#0a0512]/90 backdrop-blur-md border-b border-purple-900/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <img src="https://abdullah-gull.github.io/services/ChatGPT_Image_Jul_26__2026__01_23_06_AM-removebg-preview.png" 
-                     alt="Gull School" 
-                     class="h-9 w-auto object-contain filter drop-shadow-[0_0_12px_rgba(139,63,224,0.4)] group-hover:scale-105 transition-transform">
-                <span class="text-xl font-extrabold tracking-tight text-white font-heading">School</span>
+    <!-- STICKY HEADER -->
+    <header class="sticky top-0 z-50 bg-black/80 backdrop-blur-xl border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            
+            <!-- Pure Brand Logo (No Extra Text) -->
+            <a href="#" class="flex items-center">
+                <img src="https://gull-empire.github.io/gull-school/ChatGPT_Image_Jul_30__2026__03_56_01_AM-removebg-preview.png" 
+                     alt="Gull Empire" 
+                     class="h-11 w-auto object-contain hover:opacity-90 transition-opacity">
             </a>
 
-            <!-- Nav Links -->
-            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-300">
-                <a href="#courses" class="hover:text-amber-400 transition-colors">Courses</a>
-                <a href="#videos" class="hover:text-amber-400 transition-colors">Videos</a>
-                <a href="#about" class="hover:text-amber-400 transition-colors">About Us</a>
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-widest text-neutral-400">
+                <a href="#courses" class="hover:text-white transition-colors">Courses</a>
+                <a href="#curriculum" class="hover:text-white transition-colors">Curriculum</a>
+                <a href="#about" class="hover:text-white transition-colors">About</a>
             </nav>
 
-            <!-- Auth Buttons Container -->
-            <div id="authNavButtons" class="flex items-center gap-3">
-                <button onclick="openAuthModal('signin')" class="text-xs font-bold uppercase tracking-wider px-4 py-2 text-slate-300 hover:text-white transition-colors">
+            <!-- Dynamic Auth Buttons -->
+            <div id="authNavContainer" class="flex items-center gap-4">
+                <button onclick="openAuthModal('signin')" class="text-xs font-bold uppercase tracking-widest text-neutral-300 hover:text-white transition-colors">
                     Sign In
                 </button>
-                <button onclick="openAuthModal('signup')" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full shadow-lg shadow-amber-500/20 hover:scale-105 transition-all">
-                    Sign Up
+                <button onclick="openAuthModal('signup')" class="bg-white text-black hover:bg-neutral-200 font-bold text-xs uppercase tracking-widest px-6 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+                    Get Started
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- HERO SECTION WITH TRANSPARENT IMAGE -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-8 py-12 md:py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[80vh]">
+    <!-- HERO SECTION -->
+    <main class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto">
         
-        <!-- Left Column: Copy & CTAs -->
+        <!-- Left Content -->
         <div class="lg:col-span-7 space-y-8">
-            <div class="inline-flex items-center gap-2 border border-purple-500/30 bg-purple-900/10 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase text-amber-400 backdrop-blur-sm">
-                <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-                Amazon FBA Enterprise Academy
+            <div class="inline-flex items-center gap-3 border border-brand-border bg-neutral-900/80 px-4 py-2 rounded-full text-[11px] font-mono tracking-widest uppercase text-neutral-300">
+                <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+                E-COMMERCE & MARKETPLACE ACADEMY
             </div>
 
-            <h1 class="text-4xl sm:text-6xl font-black text-white leading-[1.1] tracking-tight">
-                Learn how to manage an Amazon account from the world’s leading agency
+            <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-[1.08]">
+                Master Enterprise Amazon FBA Operations & Growth
             </h1>
 
-            <p class="text-slate-300 text-base leading-relaxed max-w-xl">
-                Master Amazon Seller Central, PPC governance, catalog architecture, and B2B growth with practical, high-impact strategies curated by Gull Empire.
+            <p class="text-neutral-400 text-base leading-relaxed max-w-xl font-normal">
+                High-level marketplace governance, Seller Central mastery, and outbound client acquisition frameworks engineered by industry experts.
             </p>
 
-            <!-- CTA Buttons -->
+            <!-- Action Buttons -->
             <div class="flex flex-wrap items-center gap-4 pt-2">
-                <button onclick="openAuthModal('signup')" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full shadow-xl shadow-purple-900/50 hover:scale-105 transition-all">
-                    Start Learning Today
+                <button onclick="openAuthModal('signup')" class="bg-white text-black hover:bg-neutral-200 font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl">
+                    Enroll Now
                 </button>
-            </div>
-
-            <!-- Instructor Trust Tag -->
-            <div class="pt-6 border-t border-purple-900/30 flex items-center gap-4">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 to-purple-600 p-[1px] shadow-lg">
-                    <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center font-bold text-amber-400 text-xs">
-                        AG
-                    </div>
-                </div>
-                <div>
-                    <span class="block text-xs font-bold text-amber-400 uppercase tracking-wide">How Can I Serve You?</span>
-                    <span class="text-xs text-slate-400">All courses brought to you by Gull Empire</span>
-                </div>
+                <button onclick="openAuthModal('signin')" class="border border-brand-border hover:border-neutral-500 bg-brand-dark text-white font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all">
+                    Member Access
+                </button>
             </div>
         </div>
 
-        <!-- Right Column: Transparent PNG Artwork Showcase -->
+        <!-- Right Graphic Asset -->
         <div class="lg:col-span-5 flex justify-center items-center relative">
-            <!-- Background Glow Backdrop -->
-            <div class="absolute w-72 h-72 sm:w-96 sm:h-96 bg-purple-600/20 rounded-full filter blur-3xl -z-10 animate-pulse"></div>
-            <div class="absolute w-48 h-48 bg-amber-500/10 rounded-full filter blur-2xl -z-10"></div>
-            
-            <!-- Hero Image Asset -->
+            <div class="absolute w-80 h-80 bg-neutral-800/30 rounded-full filter blur-3xl -z-10"></div>
             <div class="relative group cursor-pointer" onclick="openAuthModal('signup')">
                 <img src="https://gull-empire.github.io/gull-school/Gemini_Generated_Image_bbpmt1bbpmt1bbpm-removebg-preview.png" 
-                     alt="Gull School Learning Illustration" 
-                     class="w-full max-w-lg h-auto object-contain filter drop-shadow-[0_10px_25px_rgba(139,63,224,0.35)] group-hover:scale-105 transition-all duration-500 ease-out">
+                     alt="Academy Showcase" 
+                     class="w-full max-w-md h-auto object-contain filter drop-shadow-[0_20px_40px_rgba(255,255,255,0.05)] group-hover:scale-105 transition-all duration-500">
             </div>
         </div>
+    </main>
 
-    </section>
+    <!-- FOOTER -->
+    <footer class="border-t border-brand-border py-6 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500 font-mono">
+            <p>© 2026 Gull Empire. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
 
-    <!-- AUTH MODAL SYSTEM (Firebase Connected) -->
-    <div id="authModalContainer" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+    <!-- AUTHENTICATION MODAL CONTAINER -->
+    <div id="authModalContainer" class="hidden fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
         
         <!-- SIGN IN CARD -->
-        <div id="signInCard" class="bg-[#120a21] border border-purple-500/30 rounded-2xl w-full max-w-sm p-8 relative shadow-2xl text-center">
-            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg font-bold">✕</button>
+        <div id="signInCard" class="bg-brand-card border border-brand-border rounded-2xl w-full max-w-sm p-8 relative shadow-2xl text-center">
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-neutral-500 hover:text-white text-lg font-bold">✕</button>
             
-            <h2 class="text-xl font-extrabold text-white mb-2">Login to Gull School</h2>
-            <p class="text-xs text-slate-400 mb-6">Enter your details to continue your journey.</p>
+            <h2 class="text-2xl font-bold text-white tracking-tight mb-1">Welcome Back</h2>
+            <p class="text-xs text-neutral-400 mb-6 font-mono">Access your learning portal</p>
             
-            <!-- Social Logins -->
-            <div class="flex items-center justify-center gap-3 mb-4">
-                <button onclick="handleGoogleLogin()" class="w-10 h-10 rounded-full border border-slate-700 bg-slate-900 flex items-center justify-center hover:bg-slate-800 transition-colors">
-                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5">
-                </button>
-                <button class="w-10 h-10 rounded-full bg-[#0077b5] text-white flex items-center justify-center font-bold text-sm hover:opacity-90">in</button>
-                <button class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-base hover:opacity-90"></button>
-            </div>
+            <!-- Social Login -->
+            <button onclick="handleGoogleAuth()" class="w-full bg-neutral-900 border border-brand-border hover:bg-neutral-800 text-white font-medium text-xs py-3 px-4 rounded-xl flex items-center justify-center gap-3 transition-colors mb-4">
+                <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-4 h-4">
+                Continue with Google
+            </button>
 
-            <div class="text-xs text-slate-500 font-medium mb-4">— or —</div>
+            <div class="text-[10px] text-neutral-600 uppercase tracking-widest font-mono mb-4">— or email —</div>
 
             <form onsubmit="handleEmailSignIn(event)" class="space-y-3 text-left">
                 <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
-                    <input id="loginEmail" type="email" required placeholder="E-mail" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+                    <label class="block text-[11px] uppercase tracking-wider text-neutral-400 font-mono mb-1">Email</label>
+                    <input id="loginEmail" type="email" required placeholder="name@example.com" class="w-full bg-black border border-brand-border rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-white transition-colors">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1">Password</label>
-                    <input id="loginPassword" type="password" required placeholder="Password" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-500">
+                    <label class="block text-[11px] uppercase tracking-wider text-neutral-400 font-mono mb-1">Password</label>
+                    <input id="loginPassword" type="password" required placeholder="••••••••" class="w-full bg-black border border-brand-border rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-white transition-colors">
                 </div>
-                <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold text-sm rounded-xl py-3 shadow-lg hover:scale-[1.02] transition-all mt-2">
-                    Login
+                <button type="submit" class="w-full bg-white text-black font-bold text-xs uppercase tracking-widest rounded-xl py-3 hover:bg-neutral-200 transition-colors mt-2">
+                    Sign In
                 </button>
             </form>
 
-            <div class="flex items-center justify-between text-xs text-amber-400 font-semibold pt-5">
-                <button onclick="switchAuthView('signup')" class="hover:underline">Create Account</button>
-                <a href="#" class="hover:underline">Forgot password?</a>
+            <div class="flex items-center justify-between text-xs text-neutral-400 font-mono pt-6">
+                <button onclick="switchAuthView('signup')" class="hover:text-white underline">Create Account</button>
+                <a href="#" class="hover:text-white underline">Forgot Password?</a>
             </div>
         </div>
 
         <!-- SIGN UP CARD -->
-        <div id="signUpCard" class="hidden bg-[#120a21] border border-purple-500/30 rounded-2xl w-full max-w-sm p-6 sm:p-8 relative shadow-2xl text-center max-h-[90vh] overflow-y-auto">
-            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg font-bold">✕</button>
+        <div id="signUpCard" class="hidden bg-brand-card border border-brand-border rounded-2xl w-full max-w-sm p-6 sm:p-8 relative shadow-2xl text-center max-h-[90vh] overflow-y-auto">
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-neutral-500 hover:text-white text-lg font-bold">✕</button>
             
-            <h2 class="text-xl font-extrabold text-white mb-2">Sign up to Gull School</h2>
-            <p class="text-xs text-slate-400 mb-4">Start your Amazon learning path.</p>
+            <h2 class="text-2xl font-bold text-white tracking-tight mb-1">Create Account</h2>
+            <p class="text-xs text-neutral-400 mb-4 font-mono">Join Gull Empire Academy</p>
             
-            <!-- Social Logins -->
-            <div class="flex items-center justify-center gap-3 mb-4">
-                <button onclick="handleGoogleLogin()" class="w-9 h-9 rounded-full border border-slate-700 bg-slate-900 flex items-center justify-center hover:bg-slate-800">
-                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-4 h-4">
-                </button>
-                <button class="w-9 h-9 rounded-full bg-[#0077b5] text-white flex items-center justify-center font-bold text-xs">in</button>
-                <button class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center text-sm"></button>
-            </div>
+            <!-- Social Login -->
+            <button onclick="handleGoogleAuth()" class="w-full bg-neutral-900 border border-brand-border hover:bg-neutral-800 text-white font-medium text-xs py-2.5 px-4 rounded-xl flex items-center justify-center gap-3 transition-colors mb-4">
+                <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-4 h-4">
+                Continue with Google
+            </button>
 
-            <div class="text-xs text-slate-500 font-medium mb-3">— or —</div>
+            <div class="text-[10px] text-neutral-600 uppercase tracking-widest font-mono mb-3">— or details —</div>
 
             <form onsubmit="handleEmailSignUp(event)" class="space-y-3 text-left">
                 <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1">Username <span class="text-red-500">*</span></label>
-                    <input id="regUsername" type="text" required placeholder="Name" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-purple-500">
+                    <label class="block text-[11px] uppercase tracking-wider text-neutral-400 font-mono mb-1">Full Name *</label>
+                    <input id="regName" type="text" required placeholder="John Doe" class="w-full bg-black border border-brand-border rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-white">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address <span class="text-red-500">*</span></label>
-                    <input id="regEmail" type="email" required placeholder="E-mail" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-purple-500">
+                    <label class="block text-[11px] uppercase tracking-wider text-neutral-400 font-mono mb-1">Email *</label>
+                    <input id="regEmail" type="email" required placeholder="name@example.com" class="w-full bg-black border border-brand-border rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-white">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1">Password <span class="text-red-500">*</span></label>
-                    <input id="regPassword" type="password" required placeholder="Password" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-purple-500">
-                </div>
-                <div class="grid grid-cols-2 gap-2">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1">First Name <span class="text-red-500">*</span></label>
-                        <input id="regFirstName" type="text" required placeholder="First Name" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 mb-1">Last Name <span class="text-red-500">*</span></label>
-                        <input id="regLastName" type="text" required placeholder="Last Name" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500">
-                    </div>
+                    <label class="block text-[11px] uppercase tracking-wider text-neutral-400 font-mono mb-1">Password *</label>
+                    <input id="regPassword" type="password" required placeholder="••••••••" class="w-full bg-black border border-brand-border rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-white">
                 </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1">I am a <span class="text-red-500">*</span></label>
-                    <select id="regRole" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm text-slate-300 focus:outline-none focus:border-purple-500">
-                        <option value="Employee/Student">Employee/Student</option>
+                    <label class="block text-[11px] uppercase tracking-wider text-neutral-400 font-mono mb-1">Account Role *</label>
+                    <select id="regRole" class="w-full bg-black border border-brand-border rounded-xl px-3 py-2 text-sm text-neutral-300 focus:outline-none focus:border-white">
+                        <option value="Student">Student / Learner</option>
                         <option value="Amazon Seller">Amazon Seller</option>
                         <option value="Agency Owner">Agency Owner</option>
                     </select>
                 </div>
-                <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-sm rounded-xl py-3 shadow-lg hover:scale-[1.02] transition-all mt-2">
-                    Start Learning Journey
+                <button type="submit" class="w-full bg-white text-black font-bold text-xs uppercase tracking-widest rounded-xl py-3 hover:bg-neutral-200 transition-colors mt-2">
+                    Register Account
                 </button>
             </form>
 
-            <div class="flex items-center justify-between text-xs text-amber-400 font-semibold pt-4">
-                <button onclick="switchAuthView('signin')" class="hover:underline">Sign in with your account</button>
-                <a href="#" class="hover:underline">Forgot password?</a>
+            <div class="flex items-center justify-between text-xs text-neutral-400 font-mono pt-4">
+                <button onclick="switchAuthView('signin')" class="hover:text-white underline">Already have account?</button>
             </div>
         </div>
 
     </div>
 
-    <!-- FIREBASE AUTHENTICATION ENGINE (Firebase SDK v10 Modual) -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { 
-            getAuth, 
-            createUserWithEmailAndPassword, 
-            signInWithEmailAndPassword, 
-            GoogleAuthProvider, 
-            signInWithPopup,
-            onAuthStateChanged,
-            signOut 
-        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-
-        // Firebase Credentials
+    <!-- FIREBASE AUTH ENGINE -->
+    <script>
+        // Initialize Firebase Credentials
         const firebaseConfig = {
             apiKey: "AIzaSyBtBaKgf_a202cGvBVwCI7J1QaHY5h2dZQ",
             authDomain: "gull-empire-auth.firebaseapp.com",
@@ -221,22 +210,22 @@
             appId: "1:423379194218:web:aca3b642fb4b22ad3c9513"
         };
 
-        // Initialize App & Auth
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const googleProvider = new GoogleAuthProvider();
+        // Firebase Auth Instance
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-        // UI Handlers
-        window.openAuthModal = (view = 'signin') => {
+        // Modal Controls
+        function openAuthModal(view = 'signin') {
             document.getElementById('authModalContainer').classList.remove('hidden');
-            window.switchAuthView(view);
-        };
+            switchAuthView(view);
+        }
 
-        window.closeAuthModal = () => {
+        function closeAuthModal() {
             document.getElementById('authModalContainer').classList.add('hidden');
-        };
+        }
 
-        window.switchAuthView = (view) => {
+        function switchAuthView(view) {
             if (view === 'signin') {
                 document.getElementById('signInCard').classList.remove('hidden');
                 document.getElementById('signUpCard').classList.add('hidden');
@@ -244,72 +233,80 @@
                 document.getElementById('signInCard').classList.add('hidden');
                 document.getElementById('signUpCard').classList.remove('hidden');
             }
-        };
+        }
 
-        // Firebase Email Sign-Up
-        window.handleEmailSignUp = async (e) => {
+        // Email Sign Up
+        function handleEmailSignUp(e) {
             e.preventDefault();
             const email = document.getElementById('regEmail').value;
             const password = document.getElementById('regPassword').value;
+            const name = document.getElementById('regName').value;
 
-            try {
-                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                alert(`Welcome to Gull School, ${userCredential.user.email}!`);
-                window.closeAuthModal();
-            } catch (error) {
-                alert(`Registration Error: ${error.message}`);
-            }
-        };
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    return userCredential.user.updateProfile({ displayName: name });
+                })
+                .then(() => {
+                    alert("Account created successfully!");
+                    closeAuthModal();
+                })
+                .catch((error) => {
+                    alert("Sign Up Failed: " + error.message);
+                });
+        }
 
-        // Firebase Email Sign-In
-        window.handleEmailSignIn = async (e) => {
+        // Email Sign In
+        function handleEmailSignIn(e) {
             e.preventDefault();
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
 
-            try {
-                const userCredential = await signInWithEmailAndPassword(auth, email, password);
-                alert(`Logged in successfully as ${userCredential.user.email}`);
-                window.closeAuthModal();
-            } catch (error) {
-                alert(`Login Error: ${error.message}`);
-            }
-        };
+            auth.signInWithEmailAndPassword(email, password)
+                .then(() => {
+                    alert("Successfully logged in!");
+                    closeAuthModal();
+                })
+                .catch((error) => {
+                    alert("Login Failed: " + error.message);
+                });
+        }
 
-        // Firebase Google Popup Login
-        window.handleGoogleLogin = async () => {
-            try {
-                const result = await signInWithPopup(auth, googleProvider);
-                alert(`Google Sign-In successful for ${result.user.displayName}`);
-                window.closeAuthModal();
-            } catch (error) {
-                alert(`Google Auth Error: ${error.message}`);
-            }
-        };
+        // Google Sign In
+        function handleGoogleAuth() {
+            auth.signInWithPopup(googleProvider)
+                .then(() => {
+                    alert("Signed in with Google successfully!");
+                    closeAuthModal();
+                })
+                .catch((error) => {
+                    alert("Google Auth Failed: " + error.message);
+                });
+        }
 
-        // User State Observer
-        onAuthStateChanged(auth, (user) => {
-            const navButtons = document.getElementById('authNavButtons');
+        // Auth Listener (Navbar Updates)
+        auth.onAuthStateChanged((user) => {
+            const container = document.getElementById('authNavContainer');
             if (user) {
-                navButtons.innerHTML = `
-                    <div class="flex items-center gap-3">
-                        <span class="text-xs text-amber-400 font-bold">${user.displayName || user.email.split('@')[0]}</span>
-                        <button onclick="window.handleLogout()" class="text-xs bg-red-600/80 hover:bg-red-600 text-white font-bold px-3 py-1.5 rounded-full transition-colors">
-                            Logout
-                        </button>
-                    </div>
+                const displayName = user.displayName || user.email.split('@')[0];
+                container.innerHTML = `
+                    <span class="text-xs font-mono text-neutral-300 border border-brand-border px-3 py-1.5 rounded-full bg-neutral-900">
+                        ${displayName}
+                    </span>
+                    <button onclick="auth.signOut()" class="text-xs text-neutral-400 hover:text-white font-mono underline transition-colors">
+                        Sign Out
+                    </button>
                 `;
             } else {
-                navButtons.innerHTML = `
-                    <button onclick="openAuthModal('signin')" class="text-xs font-bold uppercase tracking-wider px-4 py-2 text-slate-300 hover:text-white transition-colors">Sign In</button>
-                    <button onclick="openAuthModal('signup')" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full shadow-lg shadow-amber-500/20 hover:scale-105 transition-all">Sign Up</button>
+                container.innerHTML = `
+                    <button onclick="openAuthModal('signin')" class="text-xs font-bold uppercase tracking-widest text-neutral-300 hover:text-white transition-colors">
+                        Sign In
+                    </button>
+                    <button onclick="openAuthModal('signup')" class="bg-white text-black hover:bg-neutral-200 font-bold text-xs uppercase tracking-widest px-6 py-2.5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+                        Get Started
+                    </button>
                 `;
             }
         });
-
-        window.handleLogout = () => {
-            signOut(auth).then(() => alert("Logged out successfully."));
-        };
     </script>
 </body>
 </html>

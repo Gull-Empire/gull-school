@@ -1,143 +1,227 @@
 <!-- HTML ke <head> tag ke andar ye link add karein -->
 <script src="https://cdn.tailwindcss.com"></script>
+<!-- GULL SCHOOL - BLACK & WHITE EDITION -->
+<div class="bg-white text-zinc-900 font-sans antialiased selection:bg-zinc-900 selection:text-white">
 
-<!-- GULL SCHOOL SECTION WITH AUTH MODALS -->
-<section class="relative bg-[#0a0512] text-white py-12 px-4 sm:px-8 font-sans overflow-hidden border-t border-b border-purple-900/20">
-
-    <!-- Header Navigation -->
-    <div class="max-w-7xl mx-auto flex items-center justify-between pb-8">
-        <!-- Logo -->
-        <a href="#" class="flex items-center gap-2 group">
-            <img src="https://abdullah-gull.github.io/services/ChatGPT_Image_Jul_26__2026__01_23_06_AM-removebg-preview.png" 
-                 alt="Gull School" 
-                 class="h-9 w-auto object-contain filter drop-shadow-[0_0_10px_rgba(139,63,224,0.35)]">
-            <span class="text-2xl font-extrabold tracking-tight text-white font-heading">School</span>
-        </a>
-
-        <!-- Nav Links -->
-        <div class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
-            <a href="#home" class="hover:text-amber-400 transition-colors uppercase tracking-wider text-xs">Home</a>
-            <a href="#courses" class="hover:text-amber-400 transition-colors uppercase tracking-wider text-xs">Courses</a>
-            <a href="#videos" class="hover:text-amber-400 transition-colors uppercase tracking-wider text-xs">Videos</a>
-        </div>
-
-        <!-- Auth Buttons -->
-        <div class="flex items-center gap-4">
-            <button onclick="toggleModal('signinModal')" class="text-xs uppercase tracking-wider font-bold text-slate-300 hover:text-white transition-colors px-3 py-2">
-                Sign In
-            </button>
-            <button onclick="toggleModal('signupModal')" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full shadow-lg shadow-amber-500/20 hover:scale-105 transition-all">
-                Sign Up
-            </button>
-        </div>
-    </div>
-
-    <!-- Hero Content & Mockup Grid -->
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-8">
-        
-        <!-- Left Column: Copy & CTAs -->
-        <div class="lg:col-span-6 space-y-6">
-            <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-white font-heading">
-                Learn how to manage an Amazon account from the world’s leading Amazon agency
-            </h1>
+    <!-- STICKY NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-zinc-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
             
-            <p class="text-slate-400 text-sm leading-relaxed max-w-lg">
-                Master Amazon FBA, PPC optimization, catalog governance, and Seller Central metrics with practical, enterprise-grade strategies.
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="https://abdullah-gull.github.io/services/ChatGPT_Image_Jul_26__2026__01_23_06_AM-removebg-preview.png" 
+                     alt="Gull School" 
+                     class="h-9 w-auto object-contain invert group-hover:scale-105 transition-transform">
+                <span class="text-xl font-black tracking-tighter uppercase text-zinc-900">School</span>
+            </a>
+
+            <!-- Center Navigation -->
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-xs tracking-widest uppercase">
+                <a href="#curriculum" class="text-zinc-600 hover:text-zinc-900 transition-colors">Curriculum</a>
+                <a href="#courses" class="text-zinc-600 hover:text-zinc-900 transition-colors">Popular Courses</a>
+                <a href="#about" class="text-zinc-600 hover:text-zinc-900 transition-colors">About Instructor</a>
+            </nav>
+
+            <!-- Auth CTA Action Buttons -->
+            <div class="flex items-center gap-3">
+                <button onclick="toggleModal('signinModal')" class="text-xs font-bold tracking-wider uppercase px-4 py-2 text-zinc-800 hover:text-black transition-colors">
+                    Sign In
+                </button>
+                <button onclick="toggleModal('signupModal')" class="bg-zinc-900 hover:bg-black text-white text-xs font-bold tracking-wider uppercase px-5 py-2.5 rounded-none border border-zinc-900 hover:shadow-lg transition-all">
+                    Sign Up
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: High Conversion Copy -->
+        <div class="lg:col-span-7 space-y-8">
+            <div class="inline-flex items-center gap-2 border border-zinc-300 px-3 py-1 text-[11px] font-bold tracking-widest uppercase text-zinc-600">
+                <span class="w-2 h-2 rounded-full bg-zinc-900 animate-pulse"></span>
+                Amazon FBA Mastery Program
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl font-black text-zinc-900 leading-[1.08] tracking-tight">
+                Learn how to manage an Amazon account from the world’s leading Amazon agency.
+            </h1>
+
+            <p class="text-zinc-600 text-base leading-relaxed max-w-xl">
+                Master enterprise Seller Central governance, aggressive PPC strategies, inventory optimization, and listing architecture through actionable video modules.
             </p>
 
-            <div class="pt-2">
-                <a href="#courses" class="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-sm tracking-wider uppercase px-8 py-3.5 rounded-full shadow-lg shadow-purple-900/40 hover:scale-105 transition-all">
-                    View Courses
+            <!-- Action Trigger Buttons -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+                <a href="#courses" class="bg-zinc-900 hover:bg-black text-white font-bold text-xs uppercase tracking-widest px-8 py-4 border border-zinc-900 transition-all hover:scale-[1.02]">
+                    Explore Courses
                 </a>
+                <button onclick="toggleModal('videoModal')" class="flex items-center gap-3 border border-zinc-300 hover:border-zinc-900 text-zinc-900 font-bold text-xs uppercase tracking-widest px-6 py-4 transition-all">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    Watch Preview
+                </button>
             </div>
 
-            <!-- Instructor Badge -->
-            <div class="pt-6">
-                <div class="inline-flex items-center gap-3 bg-slate-900/80 border border-purple-500/20 rounded-full pr-6 pl-2 py-1.5 shadow-xl backdrop-blur-md">
-                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-amber-500/40 overflow-hidden shrink-0 flex items-center justify-center font-bold text-amber-400 text-xs">
-                        AG
-                    </div>
-                    <div class="text-left">
-                        <span class="block text-[10px] text-amber-400 uppercase font-semibold">How Can I Serve You?</span>
-                        <span class="text-xs font-bold text-slate-200">All courses brought to you by Gull Empire</span>
-                    </div>
+            <!-- Trust Bar / Author Card -->
+            <div class="pt-8 border-t border-zinc-200 flex items-center gap-4">
+                <div class="w-12 h-12 bg-zinc-900 text-white flex items-center justify-center font-black text-sm">
+                    AG
+                </div>
+                <div>
+                    <span class="block text-xs font-bold text-zinc-900 tracking-wide uppercase">Curated by Gull Empire</span>
+                    <span class="text-xs text-zinc-500">100+ Enterprise Brand Case Studies Included</span>
                 </div>
             </div>
         </div>
 
-        <!-- Right Column: Monitor Graphic Mockup -->
-        <div class="lg:col-span-6 flex justify-center items-center">
-            <div class="relative w-full max-w-lg group">
-                <!-- Outer Glow -->
-                <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-amber-500 rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition duration-500"></div>
-                
-                <!-- Monitor Screen Box -->
-                <div class="relative bg-slate-900 border border-slate-700/60 rounded-xl overflow-hidden shadow-2xl">
-                    <div class="bg-slate-800/80 px-4 py-2 border-b border-slate-700/50 flex items-center gap-2">
-                        <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                        <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-                        <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                        <span class="text-[10px] text-slate-400 font-mono ml-2">amazon-seller-central-dashboard.png</span>
+        <!-- Right Column: Interactive Dashboard Mockup -->
+        <div class="lg:col-span-5">
+            <div class="relative bg-zinc-950 p-2 shadow-2xl border border-zinc-800 group">
+                <!-- Browser Bar -->
+                <div class="bg-zinc-900 px-3 py-2 flex items-center justify-between mb-1">
+                    <div class="flex items-center gap-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-zinc-700"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-zinc-700"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-zinc-700"></span>
                     </div>
-                    <!-- Display Image -->
+                    <span class="text-[10px] text-zinc-400 font-mono">sellercentral-mastery.mp4</span>
+                </div>
+
+                <!-- Media Preview Wrapper -->
+                <div class="relative overflow-hidden cursor-pointer" onclick="toggleModal('videoModal')">
                     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80" 
-                         alt="Dashboard Preview" 
-                         class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity">
+                         alt="Seller Central Course Dashboard" 
+                         class="w-full h-72 sm:h-80 object-cover grayscale contrast-125 group-hover:scale-105 transition-all duration-500">
+                    
+                    <!-- Play Overlay Button -->
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                        <div class="w-16 h-16 bg-white text-black flex items-center justify-center rounded-full shadow-2xl group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-    </div>
+    </section>
+
+    <!-- COURSE CATALOG MODULE -->
+    <section id="courses" class="bg-zinc-50 border-t border-zinc-200 py-16 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto space-y-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <span class="text-xs font-bold tracking-widest text-zinc-500 uppercase">Interactive Learning</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-zinc-900 tracking-tight">Featured Training Modules</h2>
+                </div>
+                <!-- Filter Tabs -->
+                <div class="flex gap-2 border border-zinc-200 bg-white p-1">
+                    <button class="px-4 py-1.5 text-xs font-bold uppercase bg-zinc-900 text-white">All Courses</button>
+                    <button class="px-4 py-1.5 text-xs font-bold uppercase text-zinc-600 hover:text-black">Amazon FBA</button>
+                    <button class="px-4 py-1.5 text-xs font-bold uppercase text-zinc-600 hover:text-black">PPC Mastery</button>
+                </div>
+            </div>
+
+            <!-- Course Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white border border-zinc-200 p-6 flex flex-col justify-between hover:border-zinc-900 transition-all">
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold uppercase tracking-widest bg-zinc-100 px-2.5 py-1 text-zinc-800 border border-zinc-200">Module 01</span>
+                        <h3 class="text-lg font-bold text-zinc-900">Advanced Seller Central Account Audit</h3>
+                        <p class="text-xs text-zinc-600 leading-relaxed">Learn how to identify suppressed listings, indexation bugs, and catalog errors quickly.</p>
+                    </div>
+                    <button onclick="toggleModal('signupModal')" class="mt-6 w-full py-2.5 border border-zinc-900 text-xs font-bold uppercase tracking-wider hover:bg-zinc-900 hover:text-white transition-all">
+                        Enroll Now
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white border border-zinc-200 p-6 flex flex-col justify-between hover:border-zinc-900 transition-all">
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold uppercase tracking-widest bg-zinc-100 px-2.5 py-1 text-zinc-800 border border-zinc-200">Module 02</span>
+                        <h3 class="text-lg font-bold text-zinc-900">Amazon PPC Scaling & Bid Optimization</h3>
+                        <p class="text-xs text-zinc-600 leading-relaxed">Master TACoS vs ACoS management, search term isolation, and automated rule setups.</p>
+                    </div>
+                    <button onclick="toggleModal('signupModal')" class="mt-6 w-full py-2.5 border border-zinc-900 text-xs font-bold uppercase tracking-wider hover:bg-zinc-900 hover:text-white transition-all">
+                        Enroll Now
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white border border-zinc-200 p-6 flex flex-col justify-between hover:border-zinc-900 transition-all">
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold uppercase tracking-widest bg-zinc-100 px-2.5 py-1 text-zinc-800 border border-zinc-200">Module 03</span>
+                        <h3 class="text-lg font-bold text-zinc-900">A+ Content & Brand Store Architecture</h3>
+                        <p class="text-xs text-zinc-600 leading-relaxed">Build high-converting premium brand storefronts to maximize organic conversion rates.</p>
+                    </div>
+                    <button onclick="toggleModal('signupModal')" class="mt-6 w-full py-2.5 border border-zinc-900 text-xs font-bold uppercase tracking-wider hover:bg-zinc-900 hover:text-white transition-all">
+                        Enroll Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- SIGN IN MODAL -->
-    <div id="signinModal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-[#120a21] border border-purple-500/30 w-full max-w-md rounded-2xl p-6 relative shadow-2xl">
-            <button onclick="toggleModal('signinModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">✕</button>
-            <h3 class="text-xl font-bold text-white mb-2">Sign In to Gull School</h3>
-            <p class="text-xs text-slate-400 mb-6">Enter your credentials to access your courses.</p>
+    <div id="signinModal" class="hidden fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white border border-zinc-900 w-full max-w-md p-8 relative shadow-2xl">
+            <button onclick="toggleModal('signinModal')" class="absolute top-4 right-4 text-zinc-500 hover:text-black font-bold">✕</button>
+            <h3 class="text-xl font-black text-zinc-900 uppercase tracking-tight mb-2">Sign In</h3>
+            <p class="text-xs text-zinc-500 mb-6">Access your enrolled Gull School modules.</p>
             
-            <form onsubmit="event.preventDefault(); alert('Signed In Successfully!'); toggleModal('signinModal');" class="space-y-4">
+            <form onsubmit="event.preventDefault(); alert('Signed In!'); toggleModal('signinModal');" class="space-y-4">
                 <div>
-                    <label class="block text-xs text-slate-300 font-medium mb-1">Email Address</label>
-                    <input type="email" required placeholder="you@example.com" class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">Email</label>
+                    <input type="email" required placeholder="user@domain.com" class="w-full border border-zinc-300 px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900">
                 </div>
                 <div>
-                    <label class="block text-xs text-slate-300 font-medium mb-1">Password</label>
-                    <input type="password" required placeholder="••••••••" class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">Password</label>
+                    <input type="password" required placeholder="••••••••" class="w-full border border-zinc-300 px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900">
                 </div>
-                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm py-2.5 rounded-lg transition-all">Sign In</button>
+                <button type="submit" class="w-full bg-zinc-900 hover:bg-black text-white font-bold text-xs uppercase tracking-widest py-3 transition-all">Sign In</button>
             </form>
         </div>
     </div>
 
     <!-- SIGN UP MODAL -->
-    <div id="signupModal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-[#120a21] border border-purple-500/30 w-full max-w-md rounded-2xl p-6 relative shadow-2xl">
-            <button onclick="toggleModal('signupModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">✕</button>
-            <h3 class="text-xl font-bold text-white mb-2">Create an Account</h3>
-            <p class="text-xs text-slate-400 mb-6">Start learning Amazon management today.</p>
+    <div id="signupModal" class="hidden fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white border border-zinc-900 w-full max-w-md p-8 relative shadow-2xl">
+            <button onclick="toggleModal('signupModal')" class="absolute top-4 right-4 text-zinc-500 hover:text-black font-bold">✕</button>
+            <h3 class="text-xl font-black text-zinc-900 uppercase tracking-tight mb-2">Create Account</h3>
+            <p class="text-xs text-zinc-500 mb-6">Start learning Amazon management today.</p>
             
-            <form onsubmit="event.preventDefault(); alert('Account Created Successfully!'); toggleModal('signupModal');" class="space-y-4">
+            <form onsubmit="event.preventDefault(); alert('Account Created!'); toggleModal('signupModal');" class="space-y-4">
                 <div>
-                    <label class="block text-xs text-slate-300 font-medium mb-1">Full Name</label>
-                    <input type="text" required placeholder="Abdullah Gull" class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">Full Name</label>
+                    <input type="text" required placeholder="Abdullah Gull" class="w-full border border-zinc-300 px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900">
                 </div>
                 <div>
-                    <label class="block text-xs text-slate-300 font-medium mb-1">Email Address</label>
-                    <input type="email" required placeholder="you@example.com" class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">Email</label>
+                    <input type="email" required placeholder="user@domain.com" class="w-full border border-zinc-300 px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900">
                 </div>
                 <div>
-                    <label class="block text-xs text-slate-300 font-medium mb-1">Password</label>
-                    <input type="password" required placeholder="••••••••" class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">Password</label>
+                    <input type="password" required placeholder="••••••••" class="w-full border border-zinc-300 px-3 py-2 text-sm text-zinc-900 focus:outline-none focus:border-zinc-900">
                 </div>
-                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold text-sm py-2.5 rounded-lg transition-all">Create Account</button>
+                <button type="submit" class="w-full bg-zinc-900 hover:bg-black text-white font-bold text-xs uppercase tracking-widest py-3 transition-all">Register</button>
             </form>
         </div>
     </div>
 
-</section>
+    <!-- VIDEO PREVIEW MODAL -->
+    <div id="videoModal" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-zinc-950 border border-zinc-800 w-full max-w-3xl p-4 relative shadow-2xl">
+            <button onclick="toggleModal('videoModal')" class="absolute -top-10 right-0 text-white font-bold text-sm">Close ✕</button>
+            <div class="aspect-video bg-zinc-900 flex items-center justify-center">
+                <iframe class="w-full h-full" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" title="Course Preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
-<!-- MODAL TOGGLE JAVASCRIPT -->
+</div>
+
+<!-- MODAL TOGGLE JS -->
 <script>
     function toggleModal(modalId) {
         const modal = document.getElementById(modalId);
